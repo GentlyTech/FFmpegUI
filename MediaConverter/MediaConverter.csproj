@@ -40,8 +40,4 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="call signtool sign /SHA1 D2D566EDC578EA7472D2EDCDB52229C0A2D22367 $(OutDir)/*.exe $(OutDir)/*.dll" />
-  </Target>
-
 </Project>
