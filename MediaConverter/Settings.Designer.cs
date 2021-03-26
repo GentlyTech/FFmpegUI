@@ -49,10 +49,10 @@ namespace MediaConverter {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string UseFileFilters {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool UseFileFilters {
             get {
-                return ((string)(this["UseFileFilters"]));
+                return ((bool)(this["UseFileFilters"]));
             }
             set {
                 this["UseFileFilters"] = value;

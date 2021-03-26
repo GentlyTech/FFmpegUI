@@ -24,6 +24,8 @@ namespace MediaConverter
         {
             InitializeComponent();
 
+            Settings.Default.PropertyChanged += ProcessSettingsTriggers;
+
             if (Settings.Default.DefaultOpenDirectory.Length < 1)
             {
                 Settings.Default.DefaultOpenDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
@@ -34,29 +36,10 @@ namespace MediaConverter
                 Settings.Default.DefaultSaveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads";
             }
 
-            if (Settings.Default.UseFileFilters.Length < 1)
-            {
-                Settings.Default.UseFileFilters = "true";
-            }
-
             filePicker.InitialDirectory = Settings.Default.DefaultOpenDirectory;
             filePicker.Multiselect = true;
             filePicker.Title = "Add files to queue";
-
-            if (bool.Parse(Settings.Default.UseFileFilters))
-            {
-                StringBuilder builder = new StringBuilder();
-                foreach (string format in Enum.GetNames(typeof(AudioFormat)))
-                {
-                    builder.Append($"Audio File (*.{format})|*.{format}|");
-                }
-                foreach (string format in Enum.GetNames(typeof(VideoFormat)))
-                {
-                    builder.Append($"Video File (*.{format})|*.{format}|");
-                }
-                builder.Append("All files (*.*)|*.*");
-                filePicker.Filter = builder.ToString();
-            }
+            SetFilter();
 
             folderPicker.IsFolderPicker = true;
             folderPicker.Title = "Select save location";
@@ -70,6 +53,50 @@ namespace MediaConverter
             ThreadPool.SetMaxThreads(8, 8);
 
             LogWindow.GetInstance.Info("Application Initialized");
+        }
+
+        private void ProcessSettingsTriggers(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "UseFileFilters")
+            {
+                SetFilter();
+            }
+            else if (e.PropertyName == "DefaultSaveDirectory")
+            {
+                folderPicker.InitialDirectory = Settings.Default.DefaultSaveDirectory;
+                folderPicker.DefaultDirectory = Settings.Default.DefaultSaveDirectory;
+            }
+            else if (e.PropertyName == "DefaultOpenDirectory")
+            {
+                filePicker.InitialDirectory = Settings.Default.DefaultOpenDirectory;
+            }
+        }
+
+        private void SetFilter()
+        {
+            if (Settings.Default.UseFileFilters)
+            {
+                filePicker.Filter = GenerateFilters();
+            }
+            else
+            {
+                filePicker.Filter = null;
+            }
+        }
+
+        private string GenerateFilters()
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach (string format in Enum.GetNames(typeof(AudioFormat)))
+            {
+                builder.Append($"Audio File (*.{format})|*.{format}|");
+            }
+            foreach (string format in Enum.GetNames(typeof(VideoFormat)))
+            {
+                builder.Append($"Video File (*.{format})|*.{format}|");
+            }
+            builder.Append("All files (*.*)|*.*");
+            return builder.ToString();
         }
 
         private void SetConversionState(bool state)

@@ -49,16 +49,16 @@ namespace MediaConverter
             this.OpenSaveDirButton = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.FormatSelector = new System.Windows.Forms.ComboBox();
-            this.ConvertButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.TotalProgressBar = new System.Windows.Forms.ProgressBar();
             this.CurrentProgressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.FormatSelector = new System.Windows.Forms.ComboBox();
+            this.ConvertButton = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.FileList = new System.Windows.Forms.ListBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -81,9 +81,9 @@ namespace MediaConverter
             this.groupBox2.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -97,7 +97,7 @@ namespace MediaConverter
             this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 412);
+            this.tabControl1.Size = new System.Drawing.Size(778, 467);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -106,7 +106,7 @@ namespace MediaConverter
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(767, 379);
+            this.tabPage1.Size = new System.Drawing.Size(770, 434);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Audio";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@ namespace MediaConverter
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(761, 373);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 428);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // tableLayoutPanel4
@@ -132,14 +132,16 @@ namespace MediaConverter
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.groupBox3, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(290, 367);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(291, 422);
             this.tableLayoutPanel4.TabIndex = 5;
             // 
             // flowLayoutPanel1
@@ -148,12 +150,11 @@ namespace MediaConverter
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Controls.Add(this.groupBox2);
             this.flowLayoutPanel1.Controls.Add(this.groupBox5);
-            this.flowLayoutPanel1.Controls.Add(this.groupBox3);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(284, 301);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(285, 236);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -299,57 +300,6 @@ namespace MediaConverter
             this.flowLayoutPanel6.Size = new System.Drawing.Size(244, 94);
             this.flowLayoutPanel6.TabIndex = 4;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.flowLayoutPanel3);
-            this.groupBox3.Location = new System.Drawing.Point(3, 367);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(250, 120);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Conversion Options";
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label4);
-            this.flowLayoutPanel3.Controls.Add(this.FormatSelector);
-            this.flowLayoutPanel3.Controls.Add(this.ConvertButton);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 23);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(244, 94);
-            this.flowLayoutPanel3.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Target Format";
-            // 
-            // FormatSelector
-            // 
-            this.FormatSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FormatSelector.FormattingEnabled = true;
-            this.FormatSelector.Location = new System.Drawing.Point(3, 23);
-            this.FormatSelector.Name = "FormatSelector";
-            this.FormatSelector.Size = new System.Drawing.Size(238, 28);
-            this.FormatSelector.TabIndex = 3;
-            this.FormatSelector.SelectedIndexChanged += new System.EventHandler(this.FormatSelector_SelectedIndexChanged);
-            // 
-            // ConvertButton
-            // 
-            this.ConvertButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ConvertButton.Location = new System.Drawing.Point(3, 57);
-            this.ConvertButton.Name = "ConvertButton";
-            this.ConvertButton.Size = new System.Drawing.Size(238, 29);
-            this.ConvertButton.TabIndex = 2;
-            this.ConvertButton.Text = "Convert";
-            this.ConvertButton.UseVisualStyleBackColor = true;
-            this.ConvertButton.Click += new System.EventHandler(this.ConvertButton_Click);
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
@@ -360,12 +310,12 @@ namespace MediaConverter
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 310);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 365);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(284, 54);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(285, 54);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // TotalProgressBar
@@ -373,7 +323,7 @@ namespace MediaConverter
             this.TotalProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TotalProgressBar.Location = new System.Drawing.Point(75, 30);
             this.TotalProgressBar.Name = "TotalProgressBar";
-            this.TotalProgressBar.Size = new System.Drawing.Size(206, 21);
+            this.TotalProgressBar.Size = new System.Drawing.Size(207, 21);
             this.TotalProgressBar.TabIndex = 7;
             // 
             // CurrentProgressBar
@@ -381,7 +331,7 @@ namespace MediaConverter
             this.CurrentProgressBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.CurrentProgressBar.Location = new System.Drawing.Point(75, 3);
             this.CurrentProgressBar.Name = "CurrentProgressBar";
-            this.CurrentProgressBar.Size = new System.Drawing.Size(206, 21);
+            this.CurrentProgressBar.Size = new System.Drawing.Size(207, 21);
             this.CurrentProgressBar.TabIndex = 6;
             // 
             // label1
@@ -404,13 +354,65 @@ namespace MediaConverter
             this.label2.TabIndex = 9;
             this.label2.Text = "Total";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.flowLayoutPanel3);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 245);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(285, 114);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Conversion Options";
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.label4);
+            this.flowLayoutPanel3.Controls.Add(this.FormatSelector);
+            this.flowLayoutPanel3.Controls.Add(this.ConvertButton);
+            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 23);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(279, 88);
+            this.flowLayoutPanel3.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Target Format";
+            // 
+            // FormatSelector
+            // 
+            this.FormatSelector.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FormatSelector.FormattingEnabled = true;
+            this.FormatSelector.Location = new System.Drawing.Point(3, 23);
+            this.FormatSelector.Name = "FormatSelector";
+            this.FormatSelector.Size = new System.Drawing.Size(272, 28);
+            this.FormatSelector.TabIndex = 3;
+            this.FormatSelector.SelectedIndexChanged += new System.EventHandler(this.FormatSelector_SelectedIndexChanged);
+            // 
+            // ConvertButton
+            // 
+            this.ConvertButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ConvertButton.Location = new System.Drawing.Point(3, 57);
+            this.ConvertButton.Name = "ConvertButton";
+            this.ConvertButton.Size = new System.Drawing.Size(272, 29);
+            this.ConvertButton.TabIndex = 2;
+            this.ConvertButton.Text = "Convert";
+            this.ConvertButton.UseVisualStyleBackColor = true;
+            this.ConvertButton.Click += new System.EventHandler(this.ConvertButton_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.FileList);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox4.Location = new System.Drawing.Point(299, 3);
+            this.groupBox4.Location = new System.Drawing.Point(300, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(459, 367);
+            this.groupBox4.Size = new System.Drawing.Size(461, 422);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Queue";
@@ -424,7 +426,7 @@ namespace MediaConverter
             this.FileList.ItemHeight = 20;
             this.FileList.Location = new System.Drawing.Point(3, 23);
             this.FileList.Name = "FileList";
-            this.FileList.Size = new System.Drawing.Size(453, 341);
+            this.FileList.Size = new System.Drawing.Size(455, 396);
             this.FileList.TabIndex = 4;
             this.FileList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FileList_KeyDown);
             // 
@@ -458,7 +460,7 @@ namespace MediaConverter
             this.toolStripMenuItem4});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(775, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(778, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -504,7 +506,7 @@ namespace MediaConverter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 440);
+            this.ClientSize = new System.Drawing.Size(778, 495);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -526,11 +528,11 @@ namespace MediaConverter
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
